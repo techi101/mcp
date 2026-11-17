@@ -80,30 +80,65 @@ function setupServer(server: McpServer) {
     scrapeWebpageToolName,
     scrapeWebpageToolDescription,
     scrapeWebpageToolParamSchemaRaw,
+    {
+      title: "Scrape webpage",
+      readOnlyHint: true,
+      destructiveHint: false,
+      openWorldHint: true,
+      idempotentHint: true
+    },
     scrapeWebpageTool
   );
   server.tool(
     crawlWebpagesToolName,
     crawlWebpagesToolDescription,
     crawlWebpagesToolParamSchemaRaw,
+    {
+      title: "Crawl webpages",
+      readOnlyHint: true,
+      destructiveHint: false,
+      openWorldHint: true,
+      idempotentHint: true
+    },
     crawlWebpagesTool
   );
   server.tool(
     extractStructuredDataToolName,
     extractStructuredDataToolDescription,
     extractStructuredDataToolParamSchemaRaw,
+    {
+      title: "Extract structured data",
+      readOnlyHint: true,
+      destructiveHint: false,
+      openWorldHint: true,
+      idempotentHint: true
+    },
     extractStructuredDataTool
   );
   server.tool(
     browserUseToolName,
     browserUseToolDescription,
     browserUseToolParamSchemaRaw,
+    {
+      title: "Run browser agent",
+      readOnlyHint: false,
+      destructiveHint: true,
+      openWorldHint: true,
+      idempotentHint: false
+    },
     browserUseTool
   );
   server.tool(
     oaiCuaToolName,
     oaiCuaToolDescription,
     oaiCuaToolParamSchemaRaw,
+    {
+      title: "Run OpenAI computer-use agent",
+      readOnlyHint: false,
+      destructiveHint: true,
+      openWorldHint: true,
+      idempotentHint: false
+    },
     oaiCuaTool
   );
 
@@ -111,6 +146,13 @@ function setupServer(server: McpServer) {
     claudeComputerUseToolName,
     claudeComputerUseToolDescription,
     claudeComputerUseToolParamSchemaRaw,
+    {
+      title: "Run Claude computer-use agent",
+      readOnlyHint: false,
+      destructiveHint: true,
+      openWorldHint: true,
+      idempotentHint: false
+    },
     claudeComputerUseTool
   );
 
@@ -118,6 +160,13 @@ function setupServer(server: McpServer) {
     bingSearchToolName,
     bingSearchToolDescription,
     bingSearchToolParamSchemaRaw,
+    {
+      title: "Search with Bing",
+      readOnlyHint: true,
+      destructiveHint: false,
+      openWorldHint: true,
+      idempotentHint: true
+    },
     bingSearchTool
   );
 
@@ -126,18 +175,39 @@ function setupServer(server: McpServer) {
     createProfileToolName,
     createProfileToolDescription,
     {}, // createProfileToolParamSchemaRaw is just an empty object
+    {
+      title: "Create profile",
+      readOnlyHint: false,
+      destructiveHint: false,
+      openWorldHint: false,
+      idempotentHint: false
+    },
     createProfileTool
   );
   server.tool(
     deleteProfileToolName,
     deleteProfileToolDescription,
     deleteProfileToolParamSchemaRaw,
+    {
+      title: "Delete profile",
+      readOnlyHint: false,
+      destructiveHint: true,
+      openWorldHint: false,
+      idempotentHint: false
+    },
     deleteProfileTool
   );
   server.tool(
     listProfilesToolName,
     listProfilesToolDescription,
     listProfilesToolParamSchemaRaw,
+    {
+      title: "List profiles",
+      readOnlyHint: true,
+      destructiveHint: false,
+      openWorldHint: false,
+      idempotentHint: true
+    },
     listProfilesTool
   );
 
